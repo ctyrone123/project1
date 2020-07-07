@@ -2,8 +2,9 @@ function getrecipe(q) {
   $.ajax({
       url: "https://api.spoonacular.com/recipes/search?apiKey=a568c4a88785422fbf4cf46b976c40e8&number=6&query=" + q,
       success: function (res) {
+        document.getElementById("output").reset();
           for (var i = 0; i < 6; i++) {
-              document.getElementById("output").innerHTML += "<div class='pure-u-1 pure-u-md-1-3'><h1>" + res.results[i].title + "</h1><br><a href='" + res.results[i].sourceUrl + "'><img class='pure-img' src='" + res.baseUri + res.results[i].image + "' width='400' /></a><br>Ready in " + res.results[i].readyInMinutes + " minutes</div>"
+              document.getElementById("output").innerHTML += "<div class='pure-u-1 pure-u-md-1-3'><h1>" + res.results[i].title.substr(0,24) + "</h1><br><a href='" + res.results[i].sourceUrl + "'><img class='pure-img' src='" + res.baseUri + res.results[i].image + "' width='400' /></a><br>Ready in " + res.results[i].readyInMinutes + " minutes<br></div>"
               console.log(q);
           }
       }

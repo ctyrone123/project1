@@ -7,25 +7,30 @@
     <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css"
         integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/grids-responsive-min.css" />
+    <link rel="stylesheet" href= "assets/css/style.css" />
     <title>Recipe Generator</title>
 </head>
 
 <body>
-    <h1>Search for a recipe by ingredient</h1>
-    <input id="search-recipes" placeholder="Ingredient"><button onclick="getrecipe(document.getElementById('search-recipes').value)">Search</button>
-    <div id="output"></div>
-    
-    <div>
-        <h2>----Or try a random cocktail!----</h2>
-        <button id="random-cocktail" onclick="renderCocktail(document.getElementById('random-cocktail').value)">Get Random Cocktail!</button>
-        <div id="cocktails">
-            <div id="image"></div>
-            <div id="name"></div>
-            <div id="ingredients"></div>
-            <div id="directions"></div>
-            <div id="idk"></div>
+    <div class="splash-container">
+        <div class="splash">
+            <h1 class="splash-head">What Do You Have In Your Kitchen</h1>
+            <p class="splash-subhead">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            </p>
+            <p>
+                <a href="recipe.html" class="pure-button pure-button-primary">Search For Recipes by Ingredient</a>
+            </p>
+            <p>
+                <a href="cocktail.html" class="pure-button pure-button-primary">Get a Random Cocktail Suggestion</a>
+            </p>
         </div>
     </div>
+    <div class="pure-g">
+        <div class="pure-u-1 pure-u-md-1-2"><a href="bullshit.html"><button class="button-xlarge pure-button pure-u-2-3"></button></a></div>
+        <div class="pure-u-1 pure-u-md-1-2"><a href="cocktail.html"><button class="button-xlarge pure-button pure-u-2-3"></button></a></div>   
+    </div>
+    
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
     <script src="assets/js/recipe.js"></script>
 </body>

@@ -1,0 +1,343 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.pure-button {
+    background-color: #1f8dd6;
+    color: white;
+    padding: 0.5em 2em;
+    border-radius: 5px;
+    height: 2.5em;
+    padding-top: .7em;
+}
+
+a.pure-button-primary {
+    background: white;
+    color: #1f8dd6;
+    border-radius: 5px;
+    font-size: 120%;
+}
+.splash-container {
+    background: #1f8dd6;
+    z-index: 1;
+    overflow: hidden;
+    /* The following styles are required for the "scroll-over" effect */
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: fixed !important;
+}
+
+.splash {
+    /* absolute center .splash within .splash-container */
+    width: 80%;
+    height: 50%;
+    margin: auto;
+    position: absolute;
+    top: 100px; left: 0; bottom: 0; right: 0;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+/* This is the main heading that appears on the blue section */
+.splash-head {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    border: 3px solid white;
+    padding: 1em 1.6em;
+    font-weight: 100;
+    border-radius: 5px;
+    line-height: 1em;
+}
+
+/* This is the subheading that appears on the blue section */
+.splash-subhead {
+    color: white;
+    letter-spacing: 0.05em;
+    opacity: 0.8;
+}
+a {
+    text-decoration: none;
+    color: rgb(61, 146, 201);
+}
+a:hover,
+a:focus {
+    text-decoration: underline;
+}
+
+h1 {
+    font-size: 2em;
+    margin: 35px;
+}
+
+h3 {
+    font-weight: 100;
+}
+
+/* LAYOUT CSS */
+.pure-img-responsive {
+    max-width: 100%;
+    height: auto;
+}
+
+#layout {
+    padding: 0;
+}
+
+.header {
+    text-align: center;
+    top: auto;
+    margin: 3em auto;
+}
+
+.sidebar {
+    background: rgb(61, 79, 93);
+    color: #fff;
+}
+
+.brand-title,
+.brand-tagline {
+    margin: 0;
+}
+.brand-title {
+    text-transform: uppercase;
+}
+.brand-tagline {
+    font-weight: 300;
+    color: rgb(176, 202, 219);
+}
+
+.nav-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.nav-item {
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+}
+.nav-item a {
+    background: transparent;
+    border: 2px solid rgb(176, 202, 219);
+    color: #fff;
+    margin-top: 1em;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-size: 85%;
+}
+.nav-item a:hover,
+.nav-item a:focus {
+    border: 2px solid rgb(61, 146, 201);
+    text-decoration: none;
+}
+
+.content-subhead {
+    text-transform: uppercase;
+    color: #aaa;
+    border-bottom: 1px solid #eee;
+    padding: 0.4em 0;
+    font-size: 80%;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+}
+
+.content {
+    padding: 2em 1em 0;
+}
+
+.post {
+    padding-bottom: 2em;
+}
+.post-title {
+    font-size: 2em;
+    color: #222;
+    margin-bottom: 0.2em;
+}
+.post-avatar {
+    border-radius: 50px;
+    float: right;
+    margin-left: 1em;
+}
+.post-description {
+    font-family: Georgia, "Cambria", serif;
+    color: #444;
+    line-height: 1.8em;
+}
+.post-meta {
+    color: #999;
+    font-size: 90%;
+    margin: 0;
+}
+
+.post-category {
+    margin: 0 0.1em;
+    padding: 0.3em 1em;
+    color: #fff;
+    background: #999;
+    font-size: 80%;
+}
+    .post-category-design {
+        background: #5aba59;
+    }
+    .post-category-pure {
+        background: #4d85d1;
+    }
+    .post-category-yui {
+        background: #8156a7;
+    }
+    .post-category-js {
+        background: #df2d4f;
+    }
+
+.post-images {
+    margin: 1em 0;
+}
+.post-image-meta {
+    margin-top: -3.5em;
+    margin-left: 1em;
+    color: #fff;
+    text-shadow: 0 1px 1px #333;
+}
+/* card style */
+.container {
+    border: 1px solid black;
+    height: 90%;
+}
+body {
+    font-family: "Poppins", sans-serif;
+  }
+  input {
+    border-radius: 5px;
+    padding: 10px;
+    width: 60%;
+    margin-right: 5px;
+  }
+  h3 {
+    font-size: 30px;
+    color: #ffffff;
+    font-weight: bolder;
+  }
+  .btn {
+    background-color: rgba(255, 166, 0, 0.623);
+    color: rgb(202, 84, 40);
+    font-weight: 500;
+    z-index: 1;
+    margin-left: 6em;
+  }
+  .btn:hover {
+    background-color: rgb(202, 84, 40);
+    color: white;
+    border-radius: 5px;
+  }
+  .idk {
+    margin: 1em 0 1em 8.5em;
+    
+  }
+  
+  .ctaBtn {
+    background-color: rgba(255, 166, 0, 0.247);
+    border-radius: 30px;
+    padding: 0;
+    margin: 5px;
+    margin-bottom: 20px;
+  }
+  
+  .card {
+    border-radius: 30px;
+    width: 350px;
+    padding: 0;
+    margin: 20px;
+    display: inline-block;
+  }
+  img {
+    padding: 0;
+    margin: 0;
+    width: 348px;
+  }
+  #name, h2 {
+    margin: 20px 10px 0 10px;
+    color: rgb(202, 84, 40);
+    font-weight: 900;
+    font-size: larger;
+    text-shadow: 2px 2px 3px rgba(255, 166, 0, 0.698);
+    align-content: center;
+    text-align: center;
+    
+  }
+  
+  #ingredients {
+    padding: 20px;
+    text-align: center;
+    
+  }
+
+  #directions {
+    text-align: center;
+  }
+  
+  
+  #cocktails {
+    position: relative;
+    left: 33.333333%;
+  }
+
+  
+
+  .stepCocktail{
+    float: left;
+    left: 40%; 
+  }
+
+  @media (min-width: 48em) {
+    .content {
+        padding: 2em 3em 0;
+        margin-left: 25%;
+    }
+
+    .header {
+        margin: 80% 2em 0;
+        text-align: right;
+    }
+
+    .sidebar {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+    }
+}
+
+  @media screen and (max-width:812px) {
+    
+    #cocktails {
+        left: 25%;
+        padding: 0;
+        margin: 5px;
+    }
+    .card {
+        border-radius: 30px;
+        padding: 0;
+        margin: 5px;
+        display: block;
+        left: 25%;
+    }
+  }
+
+  @media screen and (max-width:500px) {
+    #cocktails {
+        left: 0%;
+        padding: 0;
+        margin: 5px;
+    }
+    .card {
+        border-radius: 30px;
+        padding: 0;
+        margin: 5px;
+        display: block;
+    }
+    
+    
+  }

@@ -18,7 +18,7 @@
                 <h1 class="brand-title">Eats and Drinks</h1>
                 <h2 class="brand-tagline">Search for a recipe by Ingredient</h2>
                 <div class=nav-list>  
-                    <input id="search-recipes" placeholder="Ingredient"><button class="pure-button" onclick="getrecipe(document.getElementById('search-recipes').value)">Search</button>
+                    <input id="search-recipes" placeholder="Ingredient"><button id="search" class="pure-button" onclick="getrecipe(document.getElementById('search-recipes').value)">Search</button>
                 </div>  
             </div>
         </section>   
@@ -34,6 +34,7 @@
                 <section class="post">
                     <header class="post-header">
                         <div id="output"></div>
+                        <button id="load">Load More</button> 
                     </header>
                     <div class="post-description">
                         <p>

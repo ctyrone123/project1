@@ -205,6 +205,7 @@ h3 {
     color: #fff;
     text-shadow: 0 1px 1px #333;
 }
+
 /* Cocktail cards style */
 .container {
     border: 5px solid #f7b538;
@@ -261,6 +262,24 @@ body {
         margin: auto;
         display: block;
         justify-content: center;
+    }
+
+    /* Cocktail cards style */  
+    .rcard {
+        border-radius: 30px;
+        height: auto;
+        width: 460px;
+        padding: 35px;
+        margin: auto;
+        display: block;
+        justify-content: center;
+    }
+    .rcontainer {
+        border: 5px solid #f7b538;
+        height: auto;
+        background-color: white;
+        text-align: center;
+        display: center;
     }
   img {
     padding: 0;

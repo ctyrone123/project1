@@ -2,12 +2,28 @@ var x = 6;
 var y = 9;
 
 
+
+
 document.getElementById("search").addEventListener("click", function(){
   $("#output").empty();
 });
 
 function saveData(item) {
-  console.log(JSON.parse(item.getAttribute("data")).title, JSON.parse(item.getAttribute("data")).sourceUrl)
+  
+  var title = JSON.parse(item.getAttribute("data")).title;
+  var sourceUrl = JSON.parse(item.getAttribute("data")).sourceUrl;
+  var baseUrl = "https://spoonacular.com/recipeImages/";
+  var recipeImage = JSON.parse(item.getAttribute("data")).image;
+  var readyTime = JSON.parse(item.getAttribute("data")).readyInMinutes;
+  console.log(title);
+  console.log(sourceUrl)
+  console.log(baseUrl)
+  console.log(recipeImage)
+  console.log(readyTime)
+  var favorites = localStorage.getItem("favorites");
+  var newFavorite = "<div class='pure-u-1 pure-u-md-1-3'><h1>" + title + "</h1><br><a href='" + sourceUrl + "' target='_blank'><img class='pure-img' src='" + baseUrl + recipeImage + "' width='400' /></a><br>Ready in " + readyTime + " minutes</div>";
+  localStorage.setItem("favorites", favorites.concat(newFavorite));
+
 } 
 
 function getrecipe(q) {
@@ -23,7 +39,8 @@ function getrecipe(q) {
             if (response.results[i].title.length > 22) {
              response.results[i].title = response.results[i].title.substr(0,22) + "...";
             };
-              document.getElementById("output").innerHTML += "<div class='pure-u-1 pure-u-md-1-3'><h1>" + response.results[i].title + "</h1><br><a href='" + response.results[i].sourceUrl + "'><img class='pure-img' src='" + response.baseUri + response.results[i].image + "' width='400' /></a><br>Ready in " + response.results[i].readyInMinutes + " minutes<br><button class='save-button' onclick='saveData(this)' data='"+ JSON.stringify(response.results[i]) +"'>Save Recipe</button></div>";
+              document.getElementById("output").innerHTML += "<div class='pure-u-1 pure-u-md-1-3'><h1>" + response.results[i].title + "</h1><br><a href='" + response.results[i].sourceUrl + "' target='_blank'><img class='pure-img' src='" + response.baseUri + response.results[i].image + "' width='400' /></a><br>Ready in " + response.results[i].readyInMinutes + " minutes<br><button class='save-button' onclick='saveData(this)' data='"+ JSON.stringify(response.results[i]) +"'>Save Recipe</button></div>";
+              console.log(response.results[i].baseUri)
           }
       })
       document.getElementById("load").addEventListener("click", function(){
@@ -38,7 +55,7 @@ function getrecipe(q) {
             res.results[i].title = res.results[i].title.substr(0,22) + "...";
           };
           console.log(i);
-          document.getElementById("output").innerHTML += "<div class='pure-u-1 pure-u-md-1-3'><h1>" + res.results[i].title + "</h1><br><a href='" + res.results[i].sourceUrl + "'><img class='pure-img' src='" + res.baseUri + res.results[i].image + "' width='400' /></a><br>Ready in " + res.results[i].readyInMinutes + " minutes<br><button>Save Recipe</button></div>";
+          document.getElementById("output").innerHTML += "<div class='pure-u-1 pure-u-md-1-3'><h1>" + res.results[i].title + "</h1><br><a href='" + res.results[i].sourceUrl + "' target='_blank'><img class='pure-img' src='" + res.baseUri + res.results[i].image + "' width='400' /></a><br>Ready in " + res.results[i].readyInMinutes + " minutes<br><button>Save Recipe</button></div>";
         }
         x = y;
         y = y + 3;

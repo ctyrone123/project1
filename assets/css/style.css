@@ -205,10 +205,13 @@ h3 {
     color: #fff;
     text-shadow: 0 1px 1px #333;
 }
-/* card style */
+/* Cocktail cards style */
 .container {
-    border: 1px solid #f7b538;
-    height: 90%;
+    border: 5px solid #f7b538;
+    height: auto;
+    background-color: white;
+    text-align: center;
+    display: center;
 }
 body {
     font-family: "Poppins", sans-serif;
@@ -230,6 +233,7 @@ body {
     font-weight: 500;
     z-index: 1;
     margin-left: 6em;
+    display: block;
   }
   .btn:hover {
     background-color: rgb(202, 84, 40);
@@ -250,15 +254,17 @@ body {
   }
   
   .card {
-    border-radius: 30px;
-    width: 350px;
-    padding: 0;
-    margin: 20px;
-    display: inline-block;
-  }
+        border-radius: 30px;
+        height: auto;
+        width: 460px;
+        padding: 35px;
+        margin: auto;
+        display: block;
+        justify-content: center;
+    }
   img {
     padding: 0;
-    margin: 0;
+    margin: 10px 10px 10px 10px;
     width: 348px;
   }
   #name, h2 {
@@ -274,7 +280,8 @@ body {
   
   #ingredients {
     padding: 20px;
-    text-align: center;
+    text-align: left;
+    display: inline-block;
     
   }
 
@@ -305,7 +312,6 @@ body {
 
   .stepCocktail{
     float: auto;
-    left: 40%; 
   }
 
   @media (min-width: 47em) {
@@ -329,7 +335,7 @@ body {
   @media screen and (max-width:812px) {
     
     #cocktails {
-        left: 7%;
+        background-color: #eee;
         padding: 0;
         margin: 5px;
     }
@@ -338,7 +344,6 @@ body {
         padding: 0;
         margin: 5px;
         display: block;
-        left: 25%;
     }
   }
 

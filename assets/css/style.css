@@ -313,7 +313,7 @@ body {
     /* Recipe cards style */  
     .rcard {
         border-radius: 30px;
-        height: 600px;
+        height: 550px;
         width: 310px;
         
         /*margin: auto;
@@ -323,9 +323,10 @@ body {
     }
     .rcontainer {
         border: 5px solid #f7b538;
-        height: 600px;
+        height: 550px;
         background-color:  white;
         text-align: center;
+        margin: 8px;
         display: center;
     }
   img {
@@ -349,9 +350,9 @@ body {
       margin-right: 10px;
   }
 
-   /*.r-title {
-      margin-top: 100px
-  }*/
+   .r-title {
+      height: 50px;
+   }
 
 
   #ingredients {

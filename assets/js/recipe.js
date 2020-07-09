@@ -8,6 +8,7 @@ document.getElementById("search").addEventListener("click", function(){
   $("#output").empty();
 });
 
+
 function saveData(item) {
   
   var title = JSON.parse(item.getAttribute("data")).title;
@@ -21,7 +22,7 @@ function saveData(item) {
   console.log(recipeImage)
   console.log(readyTime)
   var favorites = localStorage.getItem("favorites");
-  var newFavorite = "<div class='rcontainer rcard pure-u-1 pure-u-md-1-3'><h1  id='rname'>" + title + "</h1><br><a href='" + sourceUrl + "' target='_blank'><img id='rname' class='r-img pure-img' src='" + baseUrl + recipeImage + "' width='400' /></a><br>Ready in " + readyTime + " minutes</div>";
+  var newFavorite = "<div class='rcontainer rcard pure-u-1 pure-u-md-1-3'><h1 class='r-title' id=''>" + title + "</h1><br><a href='" + sourceUrl + "' target='_blank'><img id='rname' class='r-img pure-img' src='" + baseUrl + recipeImage + "' width='400' /></a><br>Ready in " + readyTime + " minutes</div>";
   localStorage.setItem("favorites", favorites.concat(newFavorite));
 
 } 
@@ -40,7 +41,7 @@ function getrecipe(q) {
              response.results[i].title = response.results[i].title.substr(0,21) + "...";
              //$("#rname").addClass("r-title");
             }
-              document.getElementById("output").innerHTML += "<div class='rcontainer rcard pure-u-1 pure-u-md-1-3'><h1>" + response.results[i].title + "</h1><br><a href='" + response.results[i].sourceUrl + "' target='_blank'><img id='rname' class='r-img pure-img' src='" + response.baseUri + response.results[i].image + "' width='400' /></a><br>Ready in " + response.results[i].readyInMinutes + " minutes<br><button class='save-button' onclick='saveData(this)' data='"+ JSON.stringify(response.results[i]) +"'>Save Recipe</button></div>";
+              document.getElementById("output").innerHTML += "<div class='rcontainer rcard pure-u-1 pure-u-md-1-3'><h1 class='r-title'>" + response.results[i].title + "</h1><br><a href='" + response.results[i].sourceUrl + "' target='_blank'><img id='rname' class='r-img pure-img' src='" + response.baseUri + response.results[i].image + "' width='400' /></a><br>Ready in " + response.results[i].readyInMinutes + " minutes<br><button class='save-button' onclick='saveData(this)' data='"+ JSON.stringify(response.results[i]) +"'>Save Recipe</button></div>";
               console.log(response.results[i].baseUri)
           }
       })
@@ -56,7 +57,7 @@ function getrecipe(q) {
             res.results[i].title = res.results[i].title.substr(0,21) + "...";
           };
           console.log(i);
-          document.getElementById("output").innerHTML += "<div class='rcontainer rcard pure-u-1 pure-u-md-1-3'><h1>" + res.results[i].title + "</h1><br><a href='" + res.results[i].sourceUrl + "' target='_blank'><img id='rname' class='r-img pure-img' src='" + res.baseUri + res.results[i].image + "' width='400' /></a><br>Ready in " + res.results[i].readyInMinutes + " minutes<br><button>Save Recipe</button></div>";
+          document.getElementById("output").innerHTML += "<div class='rcontainer rcard pure-u-1 pure-u-md-1-3'><h1 class='r-title'>" + res.results[i].title + "</h1><br><a href='" + res.results[i].sourceUrl + "' target='_blank'><img id='rname' class='r-img pure-img' src='" + res.baseUri + res.results[i].image + "' width='400' /></a><br>Ready in " + res.results[i].readyInMinutes + " minutes<br><button>Save Recipe</button></div>";
         }
         x = y;
         y = y + 3;

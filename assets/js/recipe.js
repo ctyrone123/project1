@@ -21,7 +21,7 @@ function saveData(item) {
   console.log(recipeImage)
   console.log(readyTime)
   var favorites = localStorage.getItem("favorites");
-  var newFavorite = "<div class='rcontainer rcard pure-u-1 pure-u-md-1-3'><h1>" + title + "</h1><br><a href='" + sourceUrl + "' target='_blank'><img class='pure-img' src='" + baseUrl + recipeImage + "' width='400' /></a><br>Ready in " + readyTime + " minutes</div>";
+  var newFavorite = "<div class='rcontainer rcard pure-u-1 pure-u-md-1-3'><h1  id='rname'>" + title + "</h1><br><a href='" + sourceUrl + "' target='_blank'><img id='rname' class='r-img pure-img' src='" + baseUrl + recipeImage + "' width='400' /></a><br>Ready in " + readyTime + " minutes</div>";
   localStorage.setItem("favorites", favorites.concat(newFavorite));
 
 } 
@@ -36,10 +36,11 @@ function getrecipe(q) {
       method: "GET"
     }).then(function (response) {
           for (var i = 0; i < 6; i++) {
-            if (response.results[i].title.length > 22) {
-             response.results[i].title = response.results[i].title.substr(0,22) + "...";
-            };
-              document.getElementById("output").innerHTML += "<div class='rcontainer rcard pure-u-1 pure-u-md-1-3'><h1>" + response.results[i].title + "</h1><br><a href='" + response.results[i].sourceUrl + "' target='_blank'><img class='pure-img' src='" + response.baseUri + response.results[i].image + "' width='400' /></a><br>Ready in " + response.results[i].readyInMinutes + " minutes<br><button class='save-button' onclick='saveData(this)' data='"+ JSON.stringify(response.results[i]) +"'>Save Recipe</button></div>";
+            if (response.results[i].title.length > 21) {
+             response.results[i].title = response.results[i].title.substr(0,21) + "...";
+             //$("#rname").addClass("r-title");
+            }
+              document.getElementById("output").innerHTML += "<div class='rcontainer rcard pure-u-1 pure-u-md-1-3'><h1>" + response.results[i].title + "</h1><br><a href='" + response.results[i].sourceUrl + "' target='_blank'><img id='rname' class='r-img pure-img' src='" + response.baseUri + response.results[i].image + "' width='400' /></a><br>Ready in " + response.results[i].readyInMinutes + " minutes<br><button class='save-button' onclick='saveData(this)' data='"+ JSON.stringify(response.results[i]) +"'>Save Recipe</button></div>";
               console.log(response.results[i].baseUri)
           }
       })
@@ -51,11 +52,11 @@ function getrecipe(q) {
         }).then(function (res) {
         console.log("butterfly", res);
         for(var i = x; i < y; i++){
-          if (res.results[i].title.length > 22) {
-            res.results[i].title = res.results[i].title.substr(0,22) + "...";
+          if (res.results[i].title.length > 21) {
+            res.results[i].title = res.results[i].title.substr(0,21) + "...";
           };
           console.log(i);
-          document.getElementById("output").innerHTML += "<div class='rcontainer rcard pure-u-1 pure-u-md-1-3'><h1>" + res.results[i].title + "</h1><br><a href='" + res.results[i].sourceUrl + "' target='_blank'><img class='pure-img' src='" + res.baseUri + res.results[i].image + "' width='400' /></a><br>Ready in " + res.results[i].readyInMinutes + " minutes<br><button>Save Recipe</button></div>";
+          document.getElementById("output").innerHTML += "<div class='rcontainer rcard pure-u-1 pure-u-md-1-3'><h1>" + res.results[i].title + "</h1><br><a href='" + res.results[i].sourceUrl + "' target='_blank'><img id='rname' class='r-img pure-img' src='" + res.baseUri + res.results[i].image + "' width='400' /></a><br>Ready in " + res.results[i].readyInMinutes + " minutes<br><button>Save Recipe</button></div>";
         }
         x = y;
         y = y + 3;
@@ -89,7 +90,7 @@ function renderCocktail(){
     $("#image").html(`<img src='${image}'/>`);
     $("#ingredients").html(ingredients.map(ingredient => `<li class="cocktail">${ingredient}</li>`).join(""));
     $("#directions").html(directions);
-    $("#idk").html(`<button id="random-cocktail" class="idk btn" type="submit" onclick="renderCocktail(document.getElementById('random-cocktail').value)">Try Again!</button>`);
+    $("#idk").html(`<button id="random-cocktail" class="idk btn" type="submit" onclick="renderCocktail(document.getElementById('random-cocktail').value)">Try Again!</button><a href="recipe.html" class="idk button"><button id="random-cocktail" class="idk btn" type="submit">Search Recipes</button></a>`);
     console.log(ingredients);
   });
 }

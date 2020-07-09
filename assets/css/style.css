@@ -19,7 +19,7 @@ a.pure-button-primary {
     font-size: 120%;
 }
 .splash-container {
-    background-image: url("../images/Food.jpeg");
+    background-image: url("../images/food.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -30,9 +30,8 @@ a.pure-button-primary {
     height: 100%;
     top: 0;
     left: 0;
-    position: fixed !important;
+    /*position: fixed !important;*/
 }
-
 .splash {
     /* absolute center .splash within .splash-container */
     width: 80%;
@@ -97,7 +96,7 @@ h3 {
 }
 
 .sidebar {
-    background: rgb(61, 79, 93);
+    /*background: rgb(61, 79, 93);*/
     color: #fff;
 }
 
@@ -206,14 +205,70 @@ h3 {
     text-shadow: 0 1px 1px #333;
 }
 
+a {
+    text-decoration: none;
+}
+.kitchen-img { 
+    background: url("../images/kitchen.jpg") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
+  .drink-img {
+    background: url("../images/bar.jpg") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+.index-img {
+    background: url("../images/food.jpg") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
 /* Cocktail cards style */
+.splashc {
+    /*background-image: url("../images/bar.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    z-index: 1;
+    /*overflow: hidden;*/
+    /* The following styles are required for the "scroll-over" effect */
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 90%;
+    /*position: fixed !important;*/
+}
+
 .container {
     border: 5px solid #f7b538;
-    height: auto;
-    background-color: white;
+    background-color:white;
     text-align: center;
     display: center;
+    height: 90%;
+    
 }
+.card {
+    border-radius: 30px;
+    height: 90%;
+    width: 460px;
+    padding: 35px;
+    margin: auto;
+    display: block;
+    justify-content: center;
+}
+
+.stepCocktail{
+    height: 90%;
+    float: auto;
+  }
+
 body {
     font-family: "Poppins", sans-serif;
   }
@@ -233,6 +288,7 @@ body {
     color: rgb(202, 84, 40);
     font-weight: 500;
     z-index: 1;
+    margin-top: 1em;
     margin-left: 6em;
     display: block;
   }
@@ -242,10 +298,10 @@ body {
     border-radius: 5px;
   }
   .idk {
-    margin: 1em 0 1em 8.5em;
+    margin: 0 auto;
     
   }
-  
+  .btn
   .ctaBtn {
     background-color: rgba(255, 166, 0, 0.247);
     border-radius: 30px;
@@ -254,30 +310,21 @@ body {
     margin-bottom: 20px;
   }
   
-  .card {
-        border-radius: 30px;
-        height: auto;
-        width: 460px;
-        padding: 35px;
-        margin: auto;
-        display: block;
-        justify-content: center;
-    }
-
-    /* Cocktail cards style */  
+    /* Recipe cards style */  
     .rcard {
         border-radius: 30px;
-        height: auto;
-        width: 460px;
-        padding: 35px;
-        margin: auto;
-        display: block;
+        height: 600px;
+        width: 310px;
+        
+        /*margin: auto;
+        display: block;*/
         justify-content: center;
+        text-align: center;
     }
     .rcontainer {
         border: 5px solid #f7b538;
-        height: auto;
-        background-color: white;
+        height: 600px;
+        background-color:  white;
         text-align: center;
         display: center;
     }
@@ -296,7 +343,17 @@ body {
     text-align: center;
     
   }
-  
+  .r-img {
+      height: 300px;
+      width: 280px;
+      margin-right: 10px;
+  }
+
+   /*.r-title {
+      margin-top: 100px
+  }*/
+
+
   #ingredients {
     padding: 20px;
     text-align: left;
@@ -312,25 +369,6 @@ body {
   #cocktails {
     position: relative;
     align-items: center;
-  }
-
-  .splashc {
-    background-image: url("../images/bar.jpg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    z-index: 1;
-    overflow: hidden;
-    /* The following styles are required for the "scroll-over" effect */
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    position: fixed !important;
-}
-
-  .stepCocktail{
-    float: auto;
   }
 
   @media (min-width: 47em) {
@@ -354,7 +392,6 @@ body {
   @media screen and (max-width:812px) {
     
     #cocktails {
-        background-color: #eee;
         padding: 0;
         margin: 5px;
     }

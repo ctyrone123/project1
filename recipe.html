@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
     <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css"
         integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/grids-responsive-min.css" />
@@ -20,9 +20,9 @@
                 <h1 class="brand-title">ENJOY OUR EATS</h1>
                 <h2 class="brand-tagline">Search for a recipe by Ingredient</h2>
                 <div class=nav-list>  
-                    <input id="search-recipes" placeholder="Ingredient"><button id="search" class="pure-button" onclick="getrecipe(document.getElementById('search-recipes').value)">Search</button>
+                    <input id="search-recipes" placeholder="Ingredient"><button id="search" class="pure-button" onclick="getrecipe(document.getElementById('search-recipes').value)"><i class="fa fa-cutlery" aria-hidden="true"></i></button>
                 </div>
-                <a href="favorites.html"><button class="favorites pure-button">Favorite Recipes</button></a>   
+                <a href="favorites.html"><button class="favorites pure-button">View Favorites</button></a>   
             </div>
 
         </section>   
@@ -42,9 +42,11 @@
                         </h1>
                     </div>
                     <header class="post-header">
-                        <div id="output"></div>
+                        <div id="output" class="pure-g recipe-view">
+                            
+                        </div>
                         <!--<div id="output2"></div>-->
-                        <button id="load" class="center pure-button">Load More</button> 
+                        <button id="load" class="load-more center pure-button">Load More</button> 
                     </header>
                 </section>
             </div>

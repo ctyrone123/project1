@@ -8,6 +8,7 @@ document.getElementById("search").addEventListener("click", function(){
   $("#output").empty();
 });
 
+
 function saveData(item) {
   
   var title = JSON.parse(item.getAttribute("data")).title;
@@ -21,7 +22,7 @@ function saveData(item) {
   console.log(recipeImage)
   console.log(readyTime)
   var favorites = localStorage.getItem("favorites");
-  var newFavorite = "<div class='rcontainer rcard pure-u-1 pure-u-md-1-3'><h1 class='r-title' id=''>" + title + "</h1><br><a href='" + sourceUrl + "' target='_blank'><img id='rname' class='r-img pure-img' src='" + baseUrl + recipeImage + "' width='400' /></a><br>Ready in " + readyTime + " minutes</div>";
+  var newFavorite = "<div class='rcontainer rcard pure-u-1 pure-u-md-1-3'><h1 class='r-title' id=''>" + title + "</h1><br><div class='work'><a href='" + sourceUrl + "' target='_blank'><img id='rname' class='r-img pure-img' src='" + baseUrl + recipeImage + "' width='400' /></a><div class='description'><h4>Click to View More Information</h4></div></div><br>Ready in " + readyTime + " minutes</div>";
   localStorage.setItem("favorites", favorites.concat(newFavorite));
 
 } 
@@ -39,12 +40,13 @@ function getrecipe(q) {
           for (var i = 0; i < 6; i++) {
             if (response.results[i].title.length > 21) {
              response.results[i].title = response.results[i].title.substr(0,21) + "...";
-             //$("#").addClass("r-title");
-            };
-              document.getElementById("output").innerHTML += "<div class='rcontainer rcard pure-u-1 pure-u-md-1-3'><h1 class='r-title'>" + response.results[i].title + "</h1><br><a href='" + response.results[i].sourceUrl + "' target='_blank'><img id='rname' class='r-img pure-img' src='" + response.baseUri + response.results[i].image + "' width='400' /></a><br>Ready in " + response.results[i].readyInMinutes + " minutes<br><button class='save-button' onclick='saveData(this)' data='"+ JSON.stringify(response.results[i]) +"'>Save Recipe</button></div>";
-              //console.log(response.results[i])
-              //console.log()
+             //$("#rname").addClass("r-title");
+            }
+              document.getElementById("output").innerHTML += "<div class='rcontainer rcard pure-u-1 pure-u-md-1-3'><h1 class='r-title'>" + response.results[i].title + "</h1><br><div class='work'><a href='" + response.results[i].sourceUrl + "' target='_blank'><img id='rname' class='r-img pure-img' src='" + response.baseUri + response.results[i].image + "' width='400' /></a><div class='description'><h4>Click to View More Information</h4></div></div><br>Ready in " + response.results[i].readyInMinutes + " minutes<br><button class='save-button' onclick='saveData(this)' data='"+ JSON.stringify(response.results[i]) +"'>Save Recipe<i class='fa fa-heart'></i></button></div>";
+              console.log(response.results[i].baseUri)
           }
+          var L = document.querySelector(".load-more");
+          L.style.display = "block";
       })
       document.getElementById("load").addEventListener("click", function(){
         console.log("qis", q);
@@ -58,7 +60,7 @@ function getrecipe(q) {
             res.results[i].title = res.results[i].title.substr(0,21) + "...";
           };
           console.log(i);
-          document.getElementById("output").innerHTML += "<div class='rcontainer rcard pure-u-1 pure-u-md-1-3'><h1 class'r-title'>" + res.results[i].title + "</h1><br><a href='" + res.results[i].sourceUrl + "' target='_blank'><img id='rname' class='r-img pure-img' src='" + res.baseUri + res.results[i].image + "' width='400' /></a><br>Ready in " + res.results[i].readyInMinutes + " minutes<br><button>Save Recipe</button></div>";
+          document.getElementById("output").innerHTML += "<div class='rcontainer rcard pure-u-1 pure-u-md-1-3'><h1 class='r-title'>" + res.results[i].title + "</h1><br><div class='work'><a href='" + res.results[i].sourceUrl + "' target='_blank'><img id='rname' class='r-img pure-img' src='" + res.baseUri + res.results[i].image + "' width='400' /></a><div class='description'><h4>Click to View More Information</h4></div></div><br>Ready in " + res.results[i].readyInMinutes + " minutes<br><button class='save-button' onclick='saveData(this)' data='"+ JSON.stringify(res.results[i]) +"'>Save Recipe<i class='fa fa-heart'></i></button></div>";
         }
         x = y;
         y = y + 3;
@@ -90,9 +92,9 @@ function renderCocktail(){
     };
     $("#name").html(`<h1>${name}</h1>`);
     $("#image").html(`<img src='${image}'/>`);
-    $("#ingredients").html(ingredients.map(ingredient => `<li class="cocktail">${ingredient}</li>`).join(""));
+    $("#ingredients").html(ingredients.map(ingredient => `<li><i class="fa fa-glass" aria-hidden="true"></i>${ingredient}</li>`).join(""));
     $("#directions").html(directions);
-    $("#idk").html(`<button id="random-cocktail" class="idk btn" type="submit" onclick="renderCocktail(document.getElementById('random-cocktail').value)">Try Again!</button><a href="recipe.html" class="idk button"><button id="random-cocktail" class="idk btn" type="submit">Search Recipes</button></a>`);
+    $("#idk").html(`<button id="random-cocktail" class="idk btn" type="submit" onclick="renderCocktail(document.getElementById('random-cocktail').value)">Try Again!<i class="fa fa-refresh" aria-hidden="true"></i></button><a href="recipe.html" class="idk button"><button id="random-cocktail" class="idk btn" type="submit">Search Recipes<i class="fa fa-cutlery" aria-hidden="true"></i></button></a>`);
     console.log(ingredients);
   });
 }

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css"
+        integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/grids-responsive-min.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <title>Recipe Generator</title>
+</head>
+
+<body class="kitchen-img">
+    <div class="bg-img">
+    <div id="layout" class="pure-g">
+        <section class="sidebar pure-u-1 pure-u-md-1-4">
+            <div class="header">
+                <h1 class="brand-title">ENJOY OUR EATS</h1>
+                <h2 class="brand-tagline">Search for a recipe by Ingredient</h2>
+                <div class=nav-list>  
+                    <input id="search-recipes" placeholder="Ingredient"><button id="search" class="pure-button" onclick="getrecipe(document.getElementById('search-recipes').value)"><i class="fa fa-cutlery" aria-hidden="true"></i></button>
+                </div>
+                <a href="favorites.html"><button class="favorites pure-button">View Favorites</button></a>   
+            </div>
+
+        </section>   
+    </div>
+
+    <div class="content pure-u-1 pure-u-md-3-4">
+        <div>
+            <!-- A wrapper for all the recipes and cocktail posts -->
+            <div class="posts">
+                <h1 class="content-subhead">YOUR Recipes</h1>
+
+                <!-- Food posting -->
+                <section class="post">
+                    <div class="post-description">
+                        <h1>
+                            What do you have in your kitchen or pantry?
+                        </h1>
+                    </div>
+                    <header class="post-header">
+                        <div id="output" class="pure-g recipe-view">
+                            
+                        </div>
+                        <!--<div id="output2"></div>-->
+                        <button id="load" class="load-more center pure-button">Load More</button> 
+                    </header>
+                </section>
+            </div>
+
+        </div>
+    </div>
+</div>
+    <!-- <h1>Search for a recipe by ingredient</h1>
+    <input id="search-recipes" placeholder="Ingredient"><button onclick="getrecipe(document.getElementById('search-recipes').value)">Search</button>
+    <div class="pure-g"id="output"></div> -->
+    
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+    <script src="assets/js/recipe.js"></script>
+</body>
+
+</html>

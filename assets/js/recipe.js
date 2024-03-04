@@ -94,7 +94,7 @@ function renderCocktail(){
     $("#image").html(`<img src='${image}'/>`);
     $("#ingredients").html(ingredients.map(ingredient => `<li><i class="fa fa-glass" aria-hidden="true"></i>${ingredient}</li>`).join(""));
     $("#directions").html(directions);
-    $("#idk").html(`<button id="random-cocktail" class="idk btn" type="submit" onclick="renderCocktail(document.getElementById('random-cocktail').value)">Try Again!<i class="fa fa-refresh" aria-hidden="true"></i></button><a href="recipe.html" class="idk button"><button id="random-cocktail" class="idk btn" type="submit">Search Recipes<i class="fa fa-cutlery" aria-hidden="true"></i></button></a>`);
+    $("#idk").html(`<button id="random-cocktail" class="idk btn" type="submit" onclick="renderCocktail(document.getElementById('random-cocktail').value)">Try Again!<i class="fa fa-refresh" aria-hidden="true"></i></button><a href="recipe.html" class="idk button"><button id="random-cocktail" class="idk btn" type="submit">Search Recipes<i class="fa fa-cutlery" aria-hidden="true"></i></button></a><a href="index.html" class="idk button"><button id="random-cocktail" class="idk btn" type="submit">Go Back Home<i class="fa fa-home" aria-hidden="true"></i></button></a>`);
     console.log(ingredients);
   });
 }

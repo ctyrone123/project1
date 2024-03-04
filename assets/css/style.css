@@ -8,6 +8,7 @@
     color: white;
     padding: 0.5em 2em;
     border-radius: 5px;
+    width: 240px;
     height: 2.5em;
     padding-top: .7em;
     margin-top: 4px;
@@ -103,7 +104,7 @@ h3 {
     color: #fff;
 }
 .favorites {
-    margin: 45px;
+    margin-top: 15px;
 }
 
 .brand-title,
@@ -477,7 +478,7 @@ i {
         display: block;
     }
     .favorites {
-        margin: 1px;
+        margin-top: 15px;
         width: 100%;
         text-align: center;
         padding: 0px;
@@ -506,7 +507,7 @@ i {
     .pure-button {
         width: 100%;
         padding: 0px;
-        padding-top: 10px;
+        padding-top: 0px;
     }
     .header {
         margin-right: 0px;
@@ -573,7 +574,7 @@ i {
       .pure-button {
           width: 100%;
           padding: 0px;
-          padding-top: 10px;
+          padding-top: 00px;
       }
       .header {
           margin-right: 0px;
@@ -604,7 +605,7 @@ i {
         display: block;
     }
     .favorites {
-        margin: 45px;
+        margin-top: 15px;
         width: 50%;
         text-align: center;
         padding: 0px;
@@ -633,7 +634,7 @@ i {
     .pure-button {
         width: 60%;
         padding: 0px;
-        padding-top: 10px;
+        padding-top: 0px;
     }
     .header {
         margin-right: 0px;
